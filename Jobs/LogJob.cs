@@ -9,10 +9,12 @@ namespace DotNetCore.Job
     private static TimeSpan JobTimerInterval = TimeSpan.FromSeconds(5);
     public LogJob() : base(JobTimerInterval)
     {
+      Console.WriteLine("日志作业启动");
     }
 
     protected override void DoWork(object state)
     {
+      Console.WriteLine("日志作业执行：");
       Log();
     }
 
